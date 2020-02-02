@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main() {
+	int num = 0;
+	int temp = 0;
+	int i = 0, k = 0;
+	scanf("%d", &num);
+	int *arr = malloc(sizeof(int)*num);
+	for (int i = 0; i < num; i++) {
+		scanf("%d", &arr[i]);
+	}
+	for (k = 0; k < num; k++) {
+		for (i = 0; i <num-1-k; i++) {
+			if (arr[i] > arr[i + 1]) {
+				temp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < num; i++) {
+		printf("%d\n", arr[i]);
+	}
+}
